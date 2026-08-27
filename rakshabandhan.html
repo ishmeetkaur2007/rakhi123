@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Raksha Bandhan!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Welcome Section -->
+    <header class="hero">
+        <h1>To the Best cousin in the World 🌸'Romal bhaiya'</h1>
+        <p> you have always helped me
+             in my studies 
+             ,in choosing my future path 
+             and
+              i am very grateful for your support .
+               always guide me like this only ,
+                I hope i can become successful like you
+                happy rakhi to you and may god bless you with all the happiness
+                 and success in your life.   
+            </p>
+    </header>
+
+    <!-- Message Section -->
+    <section class="message">
+                <p>i hope you are doing well
+                    and lovely wishes to Manveer
+                </p>
+        
+            
+        
+    </section>
+
+    <!-- Interactive Letter -->
+    <section class="letter">
+        <button id="openBtn">Click to Open My Message ✉️</button>
+        <p id="secretMessage" class="hidden">Thank you for always having my back. Happy Rakhi!</p>
+    </section>
+
+    <script src="script.js">
+        const themeToggle = document.getElementById("themeToggle");
+        themeToggle.addEventListener("click", () => {
+            // Check current status
+            const currentTheme = document.body.getAttribute("data-theme");
+            
+            if (currentTheme === "dark") {
+                document.body.removeAttribute("data-theme");
+            } else {
+                document.body.setAttribute("data-theme", "dark");
+            }
+        });
+    </script>
+    <style>
+        body {
+                margin: 0;
+                padding: 0;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(135deg, #ff9933, #ff3366, #9900cc);
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                overflow: hidden; /* Keeps the floating animations inside the viewport */
+                position: relative;
+        }
+
+/* Main Greeting Card */
+.rakhi-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 85%;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10; /* Ensures the card stays above floating elements */
+}
+
+/* Card Hover Animation */
+.rakhi-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+.rakhi-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 15px;
+}
+
+/* Base Rakhi Structure */
+.rakhi {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Outer Floral Dial */
+.outer-dial {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    #ffcc00 0% 10%, 
+    #ff3366 10% 20%
+  );
+  box-shadow: 0 4px 15px rgba(230, 46, 4, 0.4);
+}
+
+/* Inner Beaded Dial */
+.inner-dial {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 30%, #9900cc 100%);
+  border: 3px dashed #ffcc00;
+  animation: slowRotate 12s linear infinite;
+}
+
+/* Centerpiece Jewel */
+.center-bead {
+  position: absolute;
+  font-size: 26px;
+  z-index: 6;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Red & Yellow Sacred Silk Threads (Moli) */
+.rakhi-thread-left, .rakhi-thread-right {
+  position: absolute;
+  width: 40%;
+  height: 6px;
+  background: linear-gradient(90deg, #ffcc00, #ff3366, #ffcc00);
+  border-radius: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.rakhi-thread-left { left: 5%; }
+.rakhi-thread-right { right: 5%; }
+
+/* --- Hover Effects: Tying and Celebration Interactions --- */
+
+/* Spins and expands the Rakhi on hover */
+.rakhi-container:hover .rakhi {
+  transform: scale(1.15) rotate(45deg);
+}
+
+/* Pulses the glowing background card when interacting with the Rakhi */
+.rakhi-container:hover .outer-dial {
+  box-shadow: 0 0 25px #ffcc00, 0 0 40px #ff3366;
+  animation: pulseGlow 1.5s infinite ease-in-out;
+}
+
+/* Core System Keyframe Animations */
+@keyframes slowRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.03); opacity: 0.8; }
+}
+    </style>
+
+</body>
+</html>
